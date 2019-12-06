@@ -26,7 +26,6 @@
 .wrap .login_content_wrap .login_content .login_btn a:active{background:#f4a345;}
 .wrap .login_content_wrap .login_content .search{font-size:0.96rem; color:#686461; line-height:1;}
 .wrap .login_content_wrap .login_content .search a{display:inline-block; padding-top:26px;}
-.wrap .login_content_wrap .login_content .footer{position:absolute; bottom:15px; left:0; width:100%; height:auto; text-align:center; color:#121211; font-size:0.8rem; letter-spacing:-0.5px; font-family:'arial',sans-serif;}
 @media screen and (min-width:601px){
     .wrap .login_content_wrap{width:586px; left:50%; transform:translateX(-50%);}
 }

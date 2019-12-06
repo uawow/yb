@@ -19,6 +19,28 @@
     <link href="css/list.css" rel="stylesheet" type="text/css">
     <link href="css/pop.css" rel="stylesheet" type="text/css">
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <link rel="stylesheet" href="css/jquery-ui.css" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
+    <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>  
+    <script>
+        $.datepicker.setDefaults({
+            dateFormat: 'yy-mm-dd',
+            prevText: '이전 달',
+            nextText: '다음 달',
+            monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+            monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+            dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+            dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+            dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+            showMonthAfterYear: true,
+            yearSuffix: '년'
+        });
+
+        $(function() {
+            $("#datepicker1").datepicker();
+            $("#datepicker2").datepicker();
+        });
+    </script>
 </head>
 
 <body>
@@ -34,35 +56,96 @@
                     </div>
                     <div class="header_txt">거래 내역 조회</div>
                 </div>
-                <div class="select_wrap line1">
-                    <ul class="select_2box_wrap">
-                        <li class="long_box_wrap">
-                            <input type="text" class="some_select" value="2019/10/10~2019/11/11" />
-                        </li>
-                        <li class="long2_box_wrap">
-                            <select class="select_box">
-                                <option>압구정 1호점</option>
-                                <option>압구정 2호점</option>
-                                <option>전주 1호점</option>
-                                <option>전주 2호점</option>
-                            </select>
-                        </li>
-                    </ul>
-                </div>
-                <div class="select_wrap line2">
-                    <ul class="select_2box_wrap">
-                        <li class="long_box_wrap">
-                            <select class="some_select">
-                                <option>압구정 1호점</option>
-                                <option>압구정 2호점</option>
-                                <option>전주 1호점</option>
-                                <option>전주 2호점</option>
-                            </select>
-                        </li>
-                        <li class="long2_box_wrap">
-                            <button class="search">검 색</button>
-                        </li>
-                    </ul>
+                <div class="search_wrap">
+                    <div class="search_box_wrap">
+                       <div class="search_box">
+                            <div class="srch_item">기간</div>
+                            <div class="item_content">
+                                <div class="chk_box3">
+                                    <ul class="cdt_chk_type cdt_btn3">
+                                        <li>
+                                            <input type="radio" name="period_type" id="period_01" class="cdt_chk_input">
+                                            <label class="cdt_chk_label" for="period_01">
+                                                1일
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" name="period_type" id="period_02" class="cdt_chk_input">
+                                            <label class="cdt_chk_label" for="period_02">
+                                                1주일
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" name="period_type" id="period_03" class="cdt_chk_input">
+                                            <label class="cdt_chk_label" for="period_03">
+                                                1개월
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" name="period_type" id="period_04" class="cdt_chk_input">
+                                            <label class="cdt_chk_label" for="period_04">
+                                               3개월
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" name="period_type" id="period_05" class="cdt_chk_input">
+                                            <label class="cdt_chk_label" for="period_05">
+                                               6개월
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <input type="radio" name="period_type" id="period_06" class="cdt_chk_input" checked>
+                                            <label class="cdt_chk_label" for="period_06">
+                                               직접입력
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="date_wrap">
+                                      <div class="date_box">
+                                           <div class="date_input_wrap">
+                                               <input type="text" class="date_input" id="datepicker1" value="2019-12-05" />
+                                           </div>
+                                            <p class="date_dt">~</p>
+                                            <div class="date_input_wrap">
+                                               <input type="text" class="date_input" id="datepicker2" value="2019-12-06" />
+                                           </div>
+                                       </div>
+                                </div>
+                            </div>
+                       </div>
+                       <div class="search_box">
+                            <div class="srch_item">구분</div>
+                            <div class="item_content">
+                                <div class="select_1box_wrap">
+                                    <div class="long_all_box_wrap">
+                                        <select class="select_box">
+                                            <option>Bath1</option>
+                                            <option>Bath2</option>
+                                            <option>Pet Wash</option>
+                                            <option>Pet Dry</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                       <div class="search_box">
+                            <div class="srch_item">지점</div>
+                            <div class="item_content">
+                                <div class="select_1box_wrap">
+                                    <div class="long_all_box_wrap">
+                                        <select class="select_box">
+                                            <option>압구정 1호점</option>
+                                            <option>압구정 2호점</option>
+                                            <option>압구정 3호점</option>
+                                            <option>압구정 4호점</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                       <button class="search_btn">검 색</button>
+                    </div>
                 </div>
             </div>
             <div class="content_wrap bg_wrap">
@@ -73,6 +156,86 @@
                             <li class="content_li">구 분</li>
                             <li class="content_li">거 래 일 시</li>
                             <li class="content_li">이 용 금 액</li>
+                        </ul> 
+                    </li>
+                    <li class="content_list">
+                        <ul class="content_ul">
+                            <li class="content_li">1</li>
+                            <li class="content_li">Pet Bath1</li>
+                            <li class="content_li">2019.10.08 19:20</li>
+                            <li class="content_li">5,000</li>
+                        </ul> 
+                    </li>   
+                    <li class="content_list">
+                        <ul class="content_ul">
+                            <li class="content_li">2</li>
+                            <li class="content_li">Pet Bath1</li>
+                            <li class="content_li">2019.10.08 19:20</li>
+                            <li class="content_li">5,000</li>
+                        </ul> 
+                    </li>
+                    <li class="content_list">
+                        <ul class="content_ul">
+                            <li class="content_li">3</li>
+                            <li class="content_li">Pet Bath1</li>
+                            <li class="content_li">2019.10.08 19:20</li>
+                            <li class="content_li">5,000</li>
+                        </ul> 
+                    </li>    
+                    <li class="content_list">
+                        <ul class="content_ul">
+                            <li class="content_li">4</li>
+                            <li class="content_li">Pet Bath1</li>
+                            <li class="content_li">2019.10.08 19:20</li>
+                            <li class="content_li">5,000</li>
+                        </ul> 
+                    </li>  
+                    <li class="content_list">
+                        <ul class="content_ul">
+                            <li class="content_li">5</li>
+                            <li class="content_li">Pet Bath1</li>
+                            <li class="content_li">2019.10.08 19:20</li>
+                            <li class="content_li">5,000</li>
+                        </ul> 
+                    </li>      
+                    <li class="content_list">
+                        <ul class="content_ul">
+                            <li class="content_li">6</li>
+                            <li class="content_li">Pet Bath1</li>
+                            <li class="content_li">2019.10.08 19:20</li>
+                            <li class="content_li">5,000</li>
+                        </ul> 
+                    </li>   
+                    <li class="content_list">
+                        <ul class="content_ul">
+                            <li class="content_li">7</li>
+                            <li class="content_li">Pet Bath1</li>
+                            <li class="content_li">2019.10.08 19:20</li>
+                            <li class="content_li">5,000</li>
+                        </ul> 
+                    </li>  
+                    <li class="content_list">
+                        <ul class="content_ul">
+                            <li class="content_li">8</li>
+                            <li class="content_li">Pet Bath1</li>
+                            <li class="content_li">2019.10.08 19:20</li>
+                            <li class="content_li">5,000</li>
+                        </ul> 
+                    </li>   
+                    <li class="content_list">
+                        <ul class="content_ul">
+                            <li class="content_li">9</li>
+                            <li class="content_li">Pet Bath1</li>
+                            <li class="content_li">2019.10.08 19:20</li>
+                            <li class="content_li">5,000</li>
+                        </ul> 
+                    </li>    
+                    <li class="content_list">
+                        <ul class="content_ul">
+                            <li class="content_li">10</li>
+                            <li class="content_li">Pet Bath1</li>
+                            <li class="content_li">2019.10.08 19:20</li>
+                            <li class="content_li">5,000</li>
                         </ul> 
                     </li>
                     <li class="content_list">
@@ -165,7 +328,11 @@
                 </div>
                 <div class="num_sales">매출액: 124,000</div>
             </div>
-            <div class="footer">CHOUCHOUDAENG</div>
+            <div class="footer">CHOUCHOUDAENG
+            <!-- 테스트용 플러스 버튼 -->
+                <button class="plus">플러스</button>
+            <!-- //테스트용 플러스 버튼 -->
+            </div>
         </div>
         <!-- 마이메뉴 -->
         <!--
